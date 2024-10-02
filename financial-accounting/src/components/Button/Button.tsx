@@ -2,13 +2,22 @@ import styles from './Button.module.scss'
 
 type ButtonProps = {
     onClick: any,
-    content: string
+    content: string,
+    type: string
 } 
 
-export const Button = ({onClick, content}: ButtonProps) => {
+const buttonTypes = {
+    'headerButton': styles.buttonHeader,
+    'timeButton': styles.buttonTime
+}
+
+export const Button = ({onClick, content, type}: ButtonProps) => {
+    const buttonClass = buttonTypes[type as keyof typeof buttonTypes]
     return (
-        <button onClick={onClick} className={styles.button}>
-            {content}
-        </button>
+        <div className={styles.button}>
+            <button onClick={onClick} className={buttonClass}>
+                {content}
+            </button>
+        </div>
     )
 }

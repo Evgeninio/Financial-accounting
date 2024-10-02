@@ -1,15 +1,25 @@
-.button {
+.buttonHeader {
     background-color: #A08888;
     color: white;
-    height: 74px;
-    width: 130px;
+    min-height: 74px;
+    min-width: 130px;
     border: 0;
 }
 
-.button:hover {
+.buttonTime {
+    background-color: #D9D9D9;
+    color: white;
+    min-height: 50px;
+    min-width: 100px;
+    color: black;
+    border: 0;
+}
+
+.buttonHeader:hover, .buttonTime:hover {
     background-color: #8e6767;
 }
 
-.button:active {
+.buttonHeader:active, .buttonTime:active {
     background-color: #E6ABAB;
+    border: 1px solid black;
 }

@@ -6,9 +6,9 @@ export const Header = () => {
         alert('Hello')
     return (
         <div className={styles.container}>
-            <Button content='Главная' onClick={handleTest}/>
-            <Button content='Добавить покупку' onClick={handleTest}/>
-            <Button content='История' onClick={handleTest}/>
+            <Button content='Главная' onClick={handleTest} type={'headerButton'}/>
+            <Button content='Добавить покупку' onClick={handleTest} type={'headerButton'}/>
+            <Button content='История' onClick={handleTest} type={'headerButton'}/>
         </div>
     )
 }
