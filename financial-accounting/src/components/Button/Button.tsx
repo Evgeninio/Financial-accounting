@@ -8,7 +8,9 @@ type ButtonProps = {
 
 const buttonTypes = {
     'headerButton': styles.buttonHeader,
-    'timeButton': styles.buttonTime
+    'timeButton': styles.buttonTime,
+    'formButton': styles.buttonForm,
+    'categoryAddButton': styles.buttoncategoryAdd
 }
 
 export const Button = ({onClick, content, type}: ButtonProps) => {

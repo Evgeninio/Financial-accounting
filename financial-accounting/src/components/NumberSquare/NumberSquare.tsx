@@ -1,7 +1,7 @@
 import styles from './NumberSquare.module.scss'
 
 type NumberSquareProps = {
-    content: number
+    content?: number
 }
 
 export const NumberSquare = ({content}: NumberSquareProps) => {
