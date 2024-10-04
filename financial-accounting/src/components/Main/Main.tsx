@@ -2,16 +2,17 @@ import { Text } from "../Text/Text";
 import styles from './Main.module.scss'
 import { useState } from "react";
 import { Switcher } from "../Switcher/Switcher";
-
+import { FinanceForm } from "../FinanceForm";
 export const Main = () => {
-    const [time, setTime] = useState('')
+    const [time, setTime] = useState('месяц')
 
     return (
-    <>
-        <Switcher />
+    <>  
+        <FinanceForm />
+        <Switcher timeSet={setTime}/>
         <div className={styles.container}>
             <div className={styles.mainHeader}>
-                <Text content='Общие траты за {день\месяц\выбранный участок}' />
+                <Text content={`Общие траты за ${time}`} />
             </div>
         </div>
         <div className={styles.mainBody}>
