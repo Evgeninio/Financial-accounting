@@ -2,13 +2,12 @@ import { Text } from "../Text/Text";
 import styles from './Main.module.scss'
 import { useState } from "react";
 import { Switcher } from "../Switcher/Switcher";
-import { FinanceForm } from "../FinanceForm";
+
 export const Main = () => {
     const [time, setTime] = useState('месяц')
 
     return (
     <>  
-        <FinanceForm />
         <Switcher timeSet={setTime}/>
         <div className={styles.container}>
             <div className={styles.mainHeader}>
