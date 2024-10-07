@@ -6,10 +6,10 @@
     width: 100%;
 }
 
-.mainHeader {
+.main__header {
     display: flex;
     justify-content: center;
-    background-color: #D9D9D9;
+    background-color: var(--main-color, #d9d9d9);
     width: 30%;
     min-height: 100px;
     align-items: center;
@@ -18,15 +18,15 @@
     border-radius: 7%;
 }
 
-.mainBody {
+.main__body {
     display: flex;
     justify-content: space-around;
     padding-top: 100px;
 }
 
-.mainCategory {
+.main__category {
     display: flex;
-    background-color: #D9D9D9;
+    background-color: var(--main-color, #d9d9d9);
     width: 20%;
     min-height: 50px;
     align-items: center;

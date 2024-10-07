@@ -8,11 +8,6 @@
     left: 68%;
 	width: 25%;
 	height: 20%;
-    border: 1px solid black;
-    background-color: rgb(244, 202, 202);
-    visibility: hidden;
-}
-
-.containerOpen {
-    visibility: visible;
+    border: 1px solid var(--black-color);
+    background-color: var(--form-color);
 }

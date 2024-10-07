@@ -3,7 +3,7 @@ import { Button } from '../Button'
 import { CategoryAdder } from '../CategoryAdder/CategoryAdder'
 import styles from './Select.module.scss'
 
-import { useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 type SelectProps = {
     required: boolean,
     categories: string[]
@@ -11,19 +11,11 @@ type SelectProps = {
 }
 
 export const Select = ({number, required, categories}: SelectProps) => {
-    const [openAddForm, setOpenForm] = useState(false)
+    const [isOpened, setOpenForm] = useState(false)
 
-    const openForm = () => setOpenForm(true)
-    const closeForm = () => setOpenForm(false)
-
-    const handleOpen = (e: any) => {
+    const handleOpen = (e: SyntheticEvent<Element, Event>) => {
         e.preventDefault()
-        if (openAddForm) {
-            closeForm()
-        }
-        else {
-            openForm()
-        }
+        setOpenForm(current => !current)
     }
  
 
@@ -38,12 +30,13 @@ export const Select = ({number, required, categories}: SelectProps) => {
     return (
         <div className={styles.container}>
             <NumberSquare content={number}/>
-            <select required={required} className={styles.selectField}>
+            <select required={required} className={styles.select__field}>
                 {options}
             </select>
             <Button onClick={handleOpen} content={'Add'} type={'formButton'}/>
-            <CategoryAdder open={openAddForm}/>
-
+            {isOpened &&
+                <CategoryAdder />
+            }
         </div>
     )
 }

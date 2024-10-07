@@ -1,9 +1,11 @@
 import styles from './Switcher.module.scss'
 import { Button } from "../Button"
 import React, { Dispatch, SetStateAction } from 'react'
+import { Times } from '../Main/Main'
+
 
 type switcherProps = {
-    timeSet: Dispatch<SetStateAction<string>>
+    timeSet: Dispatch<SetStateAction<Times | string>>
 }
 
 

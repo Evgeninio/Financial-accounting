@@ -1,28 +1,27 @@
 import styles from './Header.module.scss'
 import { Button } from '../Button'
 import { FinanceForm } from '../FinanceForm'
-import { useState } from 'react'
+import { cloneElement, useState } from 'react'
+
 
 export const Header = () => {
     const handleTest = () =>
         alert('Hello')
     const[isOpened, setOpened] = useState(false)
-    const openForm = () => setOpened(true)
-    const closeForm = () => setOpened(false)
-    const handleOpenForm = () => {
-        if (isOpened) {
-            closeForm()
-        }
-        else {
-            openForm()
-        }
+
+    const handleForm = () => {
+        setOpened(current => !current)
+        console.log(isOpened)
     }
+
     return (
-        <>
-            <FinanceForm isOpened={isOpened}/>
+        <>  
+            {isOpened &&
+                <FinanceForm />
+            }
             <div className={styles.container}>
                 <Button content='Главная' onClick={handleTest} type={'headerButton'}/>
-                <Button content='Добавить покупку' onClick={handleOpenForm} type={'headerButton'}/>
+                <Button content='Добавить покупку' onClick={handleForm} type={'headerButton'}/>
                 <Button content='История' onClick={handleTest} type={'headerButton'}/>
             </div>
         </>
