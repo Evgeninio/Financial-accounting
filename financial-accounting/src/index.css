@@ -65,3 +65,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+:root {
+  --main-color: #d9d9d9;
+  --black-color: #000000;
+  --white-color: #fdfdfd;
+  --hover-color: #8e6767;
+  --animate-color: #E6ABAB;
+  --form-color: rgb(244, 202, 202);
+}

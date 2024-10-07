@@ -1,17 +1,26 @@
 import { Input } from "../Input/Input"
 import { Button } from "../Button"
 import styles from './CategoryAdder.module.scss'
+import { Categories } from "../../constants/InitialData/financeData"
+import { ChangeEvent, useState } from "react"
 
-type CategoryAdder ={
-    open: boolean
-}
+export const CategoryAdder = () => {
+    const [inputText, setInputText] = useState('')
 
-export const CategoryAdder = ({open}: CategoryAdder) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setInputText(e.target.value)
+    }
+
+    const handleForm = () => {
+        Categories.push(inputText)
+        console.log(Categories)
+        
+    }
+
     return (
-        <form className={`${open? styles.container + ' ' + styles.containerOpen : styles.container
-        }`}>
-            <Input required={true} type={'text'} square={false}/>
-            <Button onClick={''} content={'Добавить категорию'} type={'categoryAddButton'}/>
-        </form>
+        <div className={styles.container}>
+            <Input required={true} type={'text'} square={false} onChange={handleChange}/>
+            <Button onClick={handleForm} content={'Добавить категорию'} type={'categoryAddButton'}/>
+        </div>
     )
 }

@@ -1,23 +1,23 @@
 import styles from './Button.module.scss'
 
 type ButtonProps = {
-    onClick: any,
+    onClick: (e?: any) => void,
     content: string,
-    type: string
+    type: 'headerButton' | 'timeButton' | 'formButton' | 'categoryAddButton'
 } 
 
 const buttonTypes = {
-    'headerButton': styles.buttonHeader,
-    'timeButton': styles.buttonTime,
-    'formButton': styles.buttonForm,
-    'categoryAddButton': styles.buttoncategoryAdd
+    'headerButton': styles.button__header,
+    'timeButton': styles.button__time,
+    'formButton': styles.button__form,
+    'categoryAddButton': styles.button__category
 }
 
 export const Button = ({onClick, content, type}: ButtonProps) => {
     const buttonClass = buttonTypes[type as keyof typeof buttonTypes]
     return (
         <div className={styles.button}>
-            <button onClick={onClick} className={buttonClass}>
+            <button onClick={onClick} className={buttonClass + ' ' + styles.button__animate}>
                 {content}
             </button>
         </div>
